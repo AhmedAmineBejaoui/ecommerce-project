@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panier</title>
+  <style>
+    /* stile generale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    line-height: 1.6;
+    padding: 0 15px;
+}
+
+h1, h2, h3 {
+    color: #212529;
+}
+
+/* stile header */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header button {
+    background-color: #fff;
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+header button:hover {
+    background-color: #0056b3;
+    color: #fff;
+    border-color: #0056b3;
+}
+
+/* Cart List */
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.cart-item:hover {
+    transform: scale(1.02);
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.cart-item .details {
+    flex-grow: 1;
+}
+
+.cart-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.cart-item span {
+    font-size: 1rem;
+    color: #495057;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.cart-item .quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item .quantity input {
+    width: 50px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.cart-item .remove-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item .remove-btn:hover {
+    background-color: #b02a37;
+}
+
+/* section totale*/
+.total-container {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #007bff;
+}
+
+.checkout {
+    background-color: #28a745;
+    color: #fff;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.checkout:hover {
+    background-color: #218838;
+}
+
+
+
+  </style>
+</head>
+<body>
+  
+  <header>
+    <h1>Votre Panier</h1>
+    <button class="view-products" onclick="window.location.href='index.html'">Voir les produits</button>
+  </header>
+
+  <!-- lista mta3 les produits fl panier-->
+  <div id="cart-list" class="cart-list"></div>
+
+  <!-- Total -->
+  <div id="cart-total" class="total-container">
+    <span>Total : </span><span id="total-price">TND 0</span>
+  </div>
+
+  <!-- Bouton passer a la caisse -->
+  <center><button class="checkout" onclick="checkout()">Passer à la caisse</button></center>
+<!-- wa9t elli naaml chechout yo5rj message -->
+<div id="checkout-message" style="display: none; padding: 10px; background-color: #f7fbd8; color: #721c24; border: 1px solid #fffcc0; border-radius: 5px;"></div>
+
+
+
+  <script src="cart.js"></script>
+</body>
+</html>

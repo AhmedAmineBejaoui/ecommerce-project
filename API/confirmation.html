@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation de commande</title>
+  <style>
+    /* Styles pour la page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    form h2 {
+      margin-bottom: 15px;
+      color: #007bff;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #218838;
+    }
+
+    #confirmation-message {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+    }
+
+    #confirmation-message p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Confirmation de commande</h1>
+  </header>
+
+  <div class="form-container">
+    <form id="confirmation-form">
+      <h2>Informations personnelles</h2>
+      <label for="name">Nom complet :</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Adresse e-mail :</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="address">Adresse :</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="phone">Numéro de téléphone :</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <h2>Récapitulatif de la commande</h2>
+      <div id="order-summary"></div>
+
+      <h2>Mode de paiement</h2>
+      <label for="payment-method">Choisissez un mode de paiement :</label>
+      <select id="payment-method" name="payment-method" required>
+        <option value="credit-card">Carte bancaire</option>
+        <option value="paypal">PayPal</option>
+        <option value="bank-transfer">Virement bancaire</option>
+      </select>
+
+      <button type="submit" class="checkout">Confirmer la commande</button>
+    </form>
+  </div>
+
+  <div id="confirmation-message"></div>
+
+  <script src="confirmation.js"></script>
+</body>
+</html>

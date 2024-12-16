@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site E-commerce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation avec panier -->
+  <header>
+    <div class="nav-bar">
+      <div class="logo">
+        <h1>ShopPro</h1>
+      </div>
+      <div class="mini-cart">
+        <span id="cart-items-count">0</span> articles dans le panier
+        <button class="view-cart" onclick="window.location.href='cart.html'">Voir le panier</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Recherche et filtre -->
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Rechercher un produit..." onkeyup="filterProducts()">
+    <select id="category-filter" onchange="filterProducts()">
+      <option value="">Filtrer par catégorie</option>
+    </select>
+  </div>
+
+  <h1>Nos Produits</h1>
+
+  <!-- Liste des produits -->
+  <div id="product-list" class="product-list"></div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button id="prev-page" onclick="changePage('prev')">Précédent</button>
+    <span id="current-page">Page 1</span>
+    <button id="next-page" onclick="changePage('next')">Suivant</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
